@@ -2482,8 +2482,6 @@ if (typeof Slick === "undefined") {
             handled = navigateUp();
           } else if (e.which == keyCode.DOWN) {
             handled = navigateDown();
-          } else if (e.which == keyCode.TAB) {
-            handled = navigateNext();
           } else if (e.which == keyCode.ENTER) {
             if (options.editable) {
               if (currentEditor) {
