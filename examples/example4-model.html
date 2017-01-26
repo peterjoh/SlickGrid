@@ -96,7 +96,7 @@
 
 <script src="../lib/jquery-1.11.2.min.js"></script>
 <script src="../lib/jquery-ui-1.11.3.min.js"></script>
-<script src="../lib/jquery.event.drag-2.2.js"></script>
+<script src="../lib/jquery.event.drag-2.3.0.js"></script>
 
 <script src="../slick.core.js"></script>
 <script src="../slick.formatters.js"></script>
@@ -275,15 +275,8 @@ $(function () {
   });
 
   dataView.onPagingInfoChanged.subscribe(function (e, pagingInfo) {
-    var isLastPage = pagingInfo.pageNum == pagingInfo.totalPages - 1;
-    var enableAddRow = isLastPage || pagingInfo.pageSize == 0;
-    var options = grid.getOptions();
-
-    if (options.enableAddRow != enableAddRow) {
-      grid.setOptions({enableAddRow: enableAddRow});
-    }
+    grid.updatePagingStatusFromView( pagingInfo );
   });
-
 
   var h_runfilters = null;
 
