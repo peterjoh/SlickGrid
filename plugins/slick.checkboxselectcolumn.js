@@ -46,7 +46,8 @@
         }
       }
       for (i in _selectedRowsLookup) {
-        _grid.invalidateRow(i);
+        if (!lookup[i])
+          _grid.invalidateRow(i);
       }
       _selectedRowsLookup = lookup;
       _grid.render();
